@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "36939a8c-00a8-49de-9494-9a06e67b6a60",
+		"name": "register-login-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register - OK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Test Account ",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "test12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register - Password too short",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Test Account ",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "test123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register - Password mismatch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Test Account ",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "test123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register - Missing field",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Test Account ",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "test12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "Remove other fields to get variations of this error"
+			},
+			"response": []
+		},
+		{
+			"name": "Login - OK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "Register first with the same email to test this route"
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Email not found",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test1@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test12345",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Incorrect password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test1234",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Missing field",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "Remove either password or email to get different messages"
+			},
+			"response": []
+		}
+	]
+}
